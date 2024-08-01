@@ -62,7 +62,7 @@ const BubbleText = () => {
 
     return (
         <h2 className="hover-text text-center text-5xl font-thin text-[#331E84]">
-            <Text>Nitrous</Text>
+            <Text>NitrousOxide</Text>
         </h2>
     );
 };
