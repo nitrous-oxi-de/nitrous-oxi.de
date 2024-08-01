@@ -19,7 +19,7 @@ const SimpleFloatingNav = () => {
           </nav>
 
           <nav
-              className="fixed left-[50%] top-8 flex w-fit -translate-x-[50%] items-center gap-6 rounded-lg border-[1px] border-sky-900 bg-sky-500 p-3 text-sm text-neutral-50 fill-white">
+              className="fixed left-[50%] top-8 flex w-fit -translate-x-[50%] items-center gap-6 rounded-lg border-[1px] border-sky-900 bg-sky-500 p-3 text-sm text-slate-200 fill-white">
 
               <NavLink redirect={'/'}        > Home    </NavLink>
               <NavLink redirect={'/search'}  > Search  </NavLink>
