@@ -1,6 +1,7 @@
-import React      from "react";
-import { motion } from "framer-motion";
-import {NavLogo} from "@/app/components/NavLogo";
+import { motion }  from "framer-motion";
+import React       from "react";
+
+import { NavLogo } from "@/app/components/NavLogo";
 
 export const Navbar = () => {
   return (
