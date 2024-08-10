@@ -62,7 +62,7 @@ const BubbleText = () => {
 
     return (
         <h2 className="hover-text text-center text-5xl font-thin text-[#331E84]">
-            <Text>Nitrous</Text>
+            <Text>NitrousOxide</Text>
         </h2>
     );
 };
@@ -92,7 +92,7 @@ const Text = ({ children }: { children: string }) => {
 const getButtonCategories = async () => {
     let categories: string[] = [];
 
-    const res = await fetch('https://api.nitrous-oxi.de/');
+    const res = await fetch('https://osint.nitrous-oxi.de/');
 
     // returns an array of objects, each one has a 'category' property which we use to form our list
     const data = await res.json();
@@ -134,7 +134,7 @@ const getFlavorTexts = async () => {
     @desc           : queries the api and returns the data
  */
 const queryAPI = async (query: string, category: string) => {
-    const res = await fetch(`https://api.nitrous-oxi.de/${category}?query=${query}`);
+    const res = await fetch(`https://osint.nitrous-oxi.de/${category}?query=${query}`);
     return await res.json();
 }
 
