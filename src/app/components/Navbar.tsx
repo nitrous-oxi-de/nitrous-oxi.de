@@ -1,6 +1,7 @@
-import React      from "react";
-import { motion } from "framer-motion";
-import {NavLogo} from "@/app/components/NavLogo";
+import { motion }  from "framer-motion";
+import React       from "react";
+
+import { NavLogo } from "@/app/components/NavLogo";
 
 export const Navbar = () => {
   return (
@@ -19,7 +20,7 @@ const SimpleFloatingNav = () => {
           </nav>
 
           <nav
-              className="fixed left-[50%] top-8 flex w-fit -translate-x-[50%] items-center gap-6 rounded-lg border-[1px] border-sky-900 bg-sky-500 p-3 text-sm text-neutral-50 fill-white">
+              className="fixed left-[50%] top-8 flex w-fit -translate-x-[50%] items-center gap-6 rounded-lg border-[1px] border-sky-900 bg-sky-500 p-3 text-sm text-zinc-950 fill-white">
 
               <NavLink redirect={'/'}        > Home    </NavLink>
               <NavLink redirect={'/search'}  > Search  </NavLink>
