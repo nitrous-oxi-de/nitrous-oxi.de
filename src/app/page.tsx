@@ -1,20 +1,22 @@
 'use client';
 
-import React              from "react";
+import React   from "react";
 
-import Landing            from "@containers/landing/Landing";
+import Landing from "@containers/landing/Landing";
 
-import { Navbar }         from "@components/Navbar";
-import { Footer }         from "@components/Footer";
+import Navbar  from "@components/Navbar";
+import Footer  from "@components/Footer";
 
 const Home = () => {
     return (
-      <body>
+      <>
         <Landing />
         <Navbar />
         <Footer />
-      </body>
+      </>
     );
 };
 
 export default Home;
+
+// path: src/app/page.tsx

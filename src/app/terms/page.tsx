@@ -2,36 +2,81 @@
 
 import React, { ReactNode, useState } from "react";
 
-import { Navbar }                     from "@components/Navbar";
-import { Footer }                     from "@components/Footer";
+import Navbar                         from "@components/Navbar";
+import Footer                         from "@components/Footer";
+
+const terms = [
+  {
+    id: 1,
+    title: "Acceptance of Terms",
+    description:
+      "By accessing or using the NITROUS service, you agree to be bound by these Terms of Service and any future amendments or modifications.",
+  },
+  {
+    id: 2,
+    title: "Service Provided 'As-Is'",
+    description:
+      "The NITROUS service is provided on an 'as-is' and 'as-available' basis. No warranties, whether express or implied, including but not limited to, implied warranties of merchantability, fitness for a particular purpose, or non-infringement, are made with respect to the service.",
+  },
+  {
+    id: 3,
+    title: "Limitation of Liability",
+    description:
+      "Under no circumstances shall NITROUS, its developers, or affiliates be liable for any direct, indirect, incidental, special, consequential, or exemplary damages resulting from the use or the inability to use the service, even if NITROUS has been advised of the possibility of such damages.",
+  },
+  {
+    id: 4,
+    title: "Data and Content",
+    description:
+      "All data provided through the NITROUS service is sourced from third-party public APIs and external sources. NITROUS does not store or retain any of this data. The accuracy, completeness, or reliability of the data is not guaranteed, and users should independently verify the information.",
+  },
+  {
+    id: 5,
+    title: "Modifications and Discontinuation",
+    description:
+      "The NITROUS service may be modified, suspended, or discontinued at any time without notice. NITROUS reserves the right to update these Terms of Service at any time, and continued use of the service constitutes acceptance of any changes.",
+  },
+  {
+    id: 6,
+    title: "Indemnification",
+    description:
+      "Users agree to indemnify and hold harmless NITROUS, its developers, and affiliates from any claims, damages, losses, liabilities, and expenses arising out of the use of the service or violation of these Terms.",
+  },
+  {
+    id: 7,
+    title: "Governing Law",
+    description:
+      "These Terms of Service shall be governed by and construed in accordance with the laws of the jurisdiction in which NITROUS operates, without regard to its conflict of law principles.",
+  },
+];
 
 const Terms = () => {
   return (
     <MouseMoveLineDrawing>
+      <section className="min-h-screen flex flex-col justify-between py-20 px-4 sm:px-8 lg:px-16 overflow-x-hidden relative">
 
-    {/* background and layout */}
-    
-    <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,black_1px)] bg-[size:20px_20px]" />
+        {/* Background and Layout */}
+        <div className="absolute inset-0 z-[-2] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,black_1px)] bg-[size:20px_20px]" />
 
-      <div className="grid h-screen place-content-center">
-        <span className="text-5xl font-black text-purple-300">service is provided as-is</span>
-        <span className="text-2xl font-black text-white">i. no warranty is provided, express or implied</span>
-        <span className="text-2xl font-black text-white">ii. no guarantee is made to the accuracy of the results</span>
-        <span className="text-2xl font-black text-white">iii. the service may be discontinued at any time</span>
-        <span className="text-2xl font-black text-white">iv. the service may be unavailable at any time</span>
-        <span className="text-2xl font-black text-white">v. the service may be modified at any time</span>
+        <div className="max-w-3xl mx-auto flex flex-col gap-4">
+          <h3 className="text-5xl font-bold mb-6 text-purple-300 text-center">Terms of Service</h3>
+          
+          {terms.map((term) => (
+            <div key={term.id} className="flex flex-col gap-1">
+              <span className="text-xl font-bold text-white">{term.title}</span>
+              <span className="text-lg text-white">{term.description}</span>
+            </div>
+          ))}
 
-        <span className="text-5xl font-black text-purple-300">we are not liable for use of our service</span>
-        <span className="text-2xl font-black text-white">i. we are not liable for any damages caused by our service</span>
+          <span className="pt-4 text-4xl font-black text-purple-300 text-center">
+            By using this service, you agree to these terms.
+          </span>
+        </div>
 
-        <span className="text-5xl font-black text-purple-300">by using our service, you agree to these terms</span>
-        <span className="text-2xl font-black text-white">i. by using our service, you agree to our privacy policy</span>
-        <span className="text-2xl font-black text-white">ii. either may be updated at any time without notice</span>
-      </div>
+        <Navbar />
+        <Footer />
 
-      <Navbar />
-      <Footer />
-
+      </section>
     </MouseMoveLineDrawing>
   );
 };
@@ -44,11 +89,11 @@ const MouseMoveLineDrawing = ({ children }: { children?: ReactNode }) => {
   return (
     <div
       onMouseMove={(e) => {
-        setPoints((pv) => {
+        setPoints((prev) => {
           const x = e.clientX;
           const y = e.clientY;
 
-          const pointBuffer = [...pv, `${x} ${y}`];
+          const pointBuffer = [...prev, `${x} ${y}`];
 
           if (pointBuffer.length > MAX_POINTS) {
             pointBuffer.shift();
@@ -69,7 +114,7 @@ const MouseMoveLineDrawing = ({ children }: { children?: ReactNode }) => {
           strokeWidth="4"
           strokeDasharray="0"
           strokeLinecap="round"
-          points={`${points.join(", ")}`}
+          points={points.join(", ")}
         ></polyline>
       </svg>
     </div>
@@ -77,3 +122,5 @@ const MouseMoveLineDrawing = ({ children }: { children?: ReactNode }) => {
 };
 
 export default Terms;
+
+// path: src/app/terms/page.tsx

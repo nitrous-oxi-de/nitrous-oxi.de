@@ -2,8 +2,8 @@
 
 import React, {SetStateAction, useEffect, useState} from 'react';
 
-import { Navbar }                                   from "@/app/components/Navbar";
-import { Footer }                                   from "@/app/components/Footer";
+import Navbar                                       from "@/app/components/Navbar";
+import Footer                                       from "@/app/components/Footer";
 
 const FLAVOR_KEY_WORDS = [
     'effortlessly',
@@ -62,7 +62,7 @@ const BubbleText = () => {
 
     return (
         <h2 className="hover-text text-center text-5xl font-thin text-[#331E84]">
-            <Text>NitrousOxide</Text>
+            <Text>NITROUS</Text>
         </h2>
     );
 };
