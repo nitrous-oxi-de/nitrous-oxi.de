@@ -24,6 +24,6 @@
         "@containers/*": ["./src/app/containers/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.js", "src/app/components/about/page.jsx"],
+  "include": ["next-env.d.ts", "next.config.mjs", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.js", "src/app/components/about/page.jsx"],
   "exclude": ["node_modules"]
 }
