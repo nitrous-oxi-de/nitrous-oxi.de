@@ -57,7 +57,6 @@ RUN addgroup --system --gid 1001 nodejs && \
 # Copy built application
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
 # Security headers
 ENV NEXT_PUBLIC_SECURITY_HEADERS="true"
